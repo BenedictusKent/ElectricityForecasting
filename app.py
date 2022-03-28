@@ -24,5 +24,4 @@ if __name__ == '__main__':
     index_future_dates = pd.date_range(start='2022-03-23', end='2022-04-06')
     df_result = model.predict(start=len(df_training), end=len(df_training)+14, typ='levels')
     df_result.index = index_future_dates
-    # print(type(df_result))
     df_result.to_csv(args.output, header=False)
