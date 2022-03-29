@@ -27,13 +27,13 @@ From the above chart, we can see that there is an apparent seasonality in the ch
 
 We can also use *Augmented Dickey-Fuller (ADF)* and *Kwiatkowski-Phillips-Schmidt-Shin (KPSS)* test to determine the nature of the graph.  
 Click to learn more of [Dickey-Fuller](https://analyticsindiamag.com/complete-guide-to-dickey-fuller-test-in-time-series-analysis/) and [KPSS](https://www.machinelearningplus.com/time-series/kpss-test-for-stationarity/).  
-**ADF test**:
+**ADF test**:  
 ![ADF test](/img/adf.png)
 > If the test statistic is less than the critical value, we can reject the null hypothesis (aka the series is stationary). When the test statistic is greater than the critical value, we fail to reject the null hypothesis (which means the series is not stationary).  
 
 Since `Test Statistic > Critical Value`, we can infer that the chart is **Not Stationary**
 
-**KPSS test**:
+**KPSS test**:  
 ![KPSS test](/img/kpss.png)
 > If the test statistic is greater than the critical value, we reject the null hypothesis (series is not stationary). If the test statistic is less than the critical value, if fail to reject the null hypothesis (series is stationary).   
 
