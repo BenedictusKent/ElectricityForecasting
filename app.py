@@ -29,4 +29,7 @@ if __name__ == '__main__':
     index_future_dates = pd.date_range(start='2022-03-30', end='2022-04-13')
     df_result = model.predict(start=len(df_training)+3, end=len(df_training)+17, typ='levels')
     df_result.index = index_future_dates
-    df_result.to_csv(args.output, header=False)
+    df = df_result.to_frame()
+    df.columns = ['operating reserve(MW)']
+    df.index.names = ['dates']
+    df.to_csv(args.output)
