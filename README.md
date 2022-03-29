@@ -44,7 +44,7 @@ Since 2 different tests resulted in 2 different conclusions, we can determine th
 
 [Related article](https://www.analyticsvidhya.com/blog/2018/09/non-stationary-time-series-python/)  
 
-## Feature Selection
+## Model & Feature Selection
 
 Using the code below, we can select the best model to be trained using SARIMAX.
 ```python
@@ -59,3 +59,6 @@ The model SARIMAX is chosen through the process of elimination:
 1. ARMA ❌ (Chart is not stationary)
 2. ARIMA ❌ (Chart has seasonality)
 3. SARIMAX ✅
+
+### Note
+More data leads to worse result (by RMSE metrics)
