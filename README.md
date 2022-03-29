@@ -52,7 +52,7 @@ Using the code below, we can select the best model to be trained using SARIMAX.
 stepwise_fit = auto_arima(df_training['備轉容量(MW)'], m=7, trace=True, suppress_warnings=True)
 stepwise_fit.summary()
 ```
-The best model is `SARIMAX(2, 1, 3)x(1, 0, [1], 7)`
+The best model is `SARIMAX(2, 1, 3)x(1, 0, [1], 7)`  
 ![Model Summary](/img/model.png)
 
 The model SARIMAX is chosen through the process of elimination:  
