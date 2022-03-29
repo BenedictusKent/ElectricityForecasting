@@ -42,4 +42,20 @@ We can see that `Test Statistic < Critical Value`, hence the chart is **Stationa
 Since 2 different tests resulted in 2 different conclusions, we can determine the type of stationarity.
 ![Type of Stationarity](/img/stationarity.png)
 
-[Related article](https://www.analyticsvidhya.com/blog/2018/09/non-stationary-time-series-python/)
+[Related article](https://www.analyticsvidhya.com/blog/2018/09/non-stationary-time-series-python/)  
+
+## Feature Selection
+
+Using the code below, we can select the best model to be trained using SARIMAX.
+```python
+# Parameter m=7 represents daily seasonality
+stepwise_fit = auto_arima(df_training['備轉容量(MW)'], m=7, trace=True, suppress_warnings=True)
+stepwise_fit.summary()
+```
+The best model is `SARIMAX(2, 1, 3)x(1, 0, [1], 7)`
+![Model Summary](/img/model.png)
+
+The model SARIMAX is chosen through the process of elimination:  
+1. ARMA ❌ (Chart is not stationary)
+2. ARIMA ❌ (Chart has seasonality)
+3. SARIMAX ✅
